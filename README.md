@@ -337,7 +337,7 @@ Percobaan menggunakan 4 board ESP, satu sebagai **master** dan 3 sebagai **slave
 
 1. Siapkan 3 atau lebih ESP32 yang sudah diketahui Mac Address wifinya.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051349272299323452/C._Simplex_PTM.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051375306340040804/D._Simplex_MTP.png" width="480px">
 
 2. Download dan jalankan kode dari source code sesuai project.
 
@@ -361,10 +361,14 @@ Percobaan menggunakan 3 board ESP, 2 sebagai **slave** dan 1 sebagai **master**.
 
 1. Siapkan 2 ESP32 yang sudah diketahui Mac Address wifinya.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051349272299323452/C._Simplex_PTM.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051380317451206756/E._Duplex.png" width="480px">
 
-2. Download dan jalankan kode dari source code sesuai project.
-3. Pastikan library DHT dan adafruit sudah terinstal. Pastikan `DHTTYPE` sesuai dengan tipe sensor yang digunakan, contoh DHT11, DHT21, DHT22.
+2. Buat rangkaian sebagai berikut.
+
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051425529397518376/E._Rangkaian_DHT.png" width="480px">
+
+3. Download dan jalankan kode dari source code sesuai project.
+4. Pastikan library DHT dan adafruit sudah terinstal. Pastikan `DHTTYPE` sesuai dengan tipe sensor yang digunakan, contoh DHT11, DHT21, DHT22.
 
 ### Penjelasan
 
