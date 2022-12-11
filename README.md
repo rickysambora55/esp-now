@@ -70,7 +70,7 @@ Serial.println(WiFi.macAddress());
 
 Mac akan keluar di serial monitor. Pastikan baud rate sama dengan kode. Jika tidak keluar, maka tekan tombol reset.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048950668855091301/A._Mac.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048950668855091301/A._Mac.png" width="600px">
 
 ## Project B - Simplex Point to Point
 
@@ -78,7 +78,7 @@ Mac akan keluar di serial monitor. Pastikan baud rate sama dengan kode. Jika tid
 
 1. Siapkan 2 ESP32 yang sudah diketahui Mac Address wifinya.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048951902097920090/B._Simplex_PTP.webp" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048951902097920090/B._Simplex_PTP.webp" width="600px">
 
 2. Download dan jalankan kode dari source code sesuai project.
 
@@ -263,15 +263,15 @@ esp_now_register_recv_cb(OnDataRecv);
 
 1. Sender
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048964922966540309/B._Simplex_PTP_Sender.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048964922966540309/B._Simplex_PTP_Sender.png" width="600px">
 
 2. Receiver
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048964955749232710/B._Simplex_PTP_Receiver.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048964955749232710/B._Simplex_PTP_Receiver.png" width="600px">
 
 ### Tugas B no. 8-11
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048975577819910164/image.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048975577819910164/image.png" width="600px">
 
 Percobaan dilakukan di ruangan tertutup dengan beberapa perabotan (meja dan kursi) serta terdapat beberapa orang dan ESP32 lain pada radius 10m / pada ruangan yang sama. Jarak antar ESP adalah 1 meter, 2 meter, 3 meter, 4 meter, dan 5 meter pada ketinggian masing-masing yaitu ground level, 30cm, dan 1m diatas tanah secara LOS (Line of Sight) dan halangan berupa tangan dan buku.
 
@@ -283,7 +283,7 @@ Hasil yang didapatkan dari percobaan adalah 100% diterima dan 0% loss. Hal ini d
 
 1. Siapkan 3 atau lebih ESP32 yang sudah diketahui Mac Address wifinya.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051349272299323452/C._Simplex_PTM.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051349272299323452/C._Simplex_PTM.png" width="600px">
 
 2. Download dan jalankan kode dari source code sesuai project.
 
@@ -295,24 +295,24 @@ Percobaan menggunakan 4 board ESP, satu sebagai _master_ dan 3 sebagai _slave_. 
 
 1. _Master_
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051351274479681596/C._Simplex_PTM_Sender.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051351274479681596/C._Simplex_PTM_Sender.png" width="600px">
 
 2. _Slave_
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051351311939026994/C._Simplex_PTM_Receiver.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051351311939026994/C._Simplex_PTM_Receiver.png" width="600px">
 
 ### Tugas C(a) no. 9
 
 Percobaan menggunakan 3 board ESP, satu sebagai _master_ dan 2 sebagai _slave_. Prinsip kerja yang dipakai adalah sama, akan tetapi board _slave_ pada percobaan ini diputus salah satu. Sehingga hasil keluaranya menjadi sebagai berikut pada _board master_:
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051352238523699330/C._Simplex_PTM_Tugas_1.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051352238523699330/C._Simplex_PTM_Tugas_1.png" width="600px">
 
 ### Tugas C(a) no. 10-11
 
 Percobaan hanya dapat menggunakan hingga 5 _board_ saja karena keterbatasan ESP yang ada. Pada pengiriman 4 _slaves_ tidak ada kendala sama sekali. Sedangkan menurut https://randomnerdtutorials.com/ ESP-NOW dapat berkomunikasi dengan peer terenkripsi hingga 10 ESP.
 Nb. Untuk menambah jumlah ESP dalam jaringan, maka selain menambah variabel mac juga perlu menambah peer untuk masing-masing _slaves_. _Board slave_ menggunakan kode yang sama seperti sebelumnya.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051352762329354280/C._Simplex_PTM_Tugas_2.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051352762329354280/C._Simplex_PTM_Tugas_2.png" width="600px">
 
 ### Tugas C(b)
 
@@ -320,19 +320,19 @@ Percobaan menggunakan 4 board ESP, satu sebagai _master_ dan 3 sebagai _slave_. 
 
 1. _Master_
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051354348317327390/C._Simplex_PTM_Tugas_3b.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051354348317327390/C._Simplex_PTM_Tugas_3b.png" width="600px">
 
 2. **Slave 1**
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051355248234610778/C._Simplex_PTM_Tugas_3b_Slave_1.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051355248234610778/C._Simplex_PTM_Tugas_3b_Slave_1.png" width="600px">
 
 3. **Slave 2**
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051355248524021760/C._Simplex_PTM_Tugas_3b_Slave_2.jpeg" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051355248524021760/C._Simplex_PTM_Tugas_3b_Slave_2.jpeg" width="600px">
 
 4. **Slave 3**
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051355248712757248/C._Simplex_PTM_Tugas_3b_Slave_3.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051355248712757248/C._Simplex_PTM_Tugas_3b_Slave_3.png" width="600px">
 
 ## Project D - Simplex Multipoint to Point
 
@@ -340,7 +340,7 @@ Percobaan menggunakan 4 board ESP, satu sebagai _master_ dan 3 sebagai _slave_. 
 
 1. Siapkan 3 atau lebih ESP32 yang sudah diketahui Mac Address wifinya.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051375306340040804/D._Simplex_MTP.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051375306340040804/D._Simplex_MTP.png" width="600px">
 
 2. Download dan jalankan kode dari source code sesuai project.
 
@@ -352,11 +352,11 @@ Percobaan menggunakan 3 board ESP, 2 sebagai _slave_ dan 1 sebagai _master_. Pri
 
 1. _Master_
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051375306625273876/D._Simplex_MTP_Master.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051375306625273876/D._Simplex_MTP_Master.png" width="600px">
 
 2. _Slave_
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051375306889502822/D._Simplex_MTP_Slave.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051375306889502822/D._Simplex_MTP_Slave.png" width="600px">
 
 ## Project E - Duplex
 
@@ -364,11 +364,11 @@ Percobaan menggunakan 3 board ESP, 2 sebagai _slave_ dan 1 sebagai _master_. Pri
 
 1. Siapkan 2 ESP32 yang sudah diketahui Mac Address wifinya.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051380317451206756/E._Duplex.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051380317451206756/E._Duplex.png" width="600px">
 
 2. Buat rangkaian sebagai berikut.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051425529397518376/E._Rangkaian_DHT.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051425529397518376/E._Rangkaian_DHT.png" width="600px">
 
 3. Download dan jalankan kode dari source code sesuai project.
 4. Pastikan library DHT dan adafruit sudah terinstal. Pastikan `DHTTYPE` sesuai dengan tipe sensor yang digunakan, contoh DHT11, DHT21, DHT22.
@@ -379,13 +379,13 @@ Percobaan menggunakan 1 board ESP untuk membaca sensor DHT (pada percobaan digun
 
 ### Keluaran
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051380317124042772/E._DHT11.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051380317124042772/E._DHT11.png" width="600px">
 
 ### Tugas E no. 6-9
 
 Percobaan menggunakan 2 board ESP yang saling berkomunikasi. Hasil sensor ESP A dikirim ke ESP B dan juga sebaliknya dalam interval waktu tertentu. Sehingga program menggabungkan fungsi pengiriman dan penerimaan data serta pembacaan sensor sekaligus.
 
-<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051380507750957096/E._Duplex_Tugas_1.png" width="480px">
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051380507750957096/E._Duplex_Tugas_1.png" width="600px">
 
 ### Tugas E no. 10
 
