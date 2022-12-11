@@ -6,7 +6,7 @@ Kelas : TE-3B
 
 # Jobsheet 1.1 ESP-NOW
 
-Pada jobsheet 1.1 terdapat 3 project yaitu simulasi GPIO, PWM, dan ADC menggunakan ESP32.
+Pada jobsheet 1.1 terdapat 5 project yaitu pembacaan mac address, simulasi komunikasi satu arah point to point, point to multipoint, multipoint to point, serta komunikasi dua arah.
 
 ### Alat dan Bahan
 
