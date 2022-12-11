@@ -57,8 +57,8 @@ Import library wifi
 Set mode dan print mac address di serial monitor
 
 ```c
-    WiFi.mode(WIFI_MODE_STA);
-    Serial.println(WiFi.macAddress());
+WiFi.mode(WIFI_MODE_STA);
+Serial.println(WiFi.macAddress());
 ```
 
 ### Keluaran
@@ -67,7 +67,7 @@ Mac akan keluar di serial monitor. Pastikan baud rate sama dengan kode. Jika tid
 
 ![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1048950668855091301/A._Mac.png)
 
-## Project B - One-Way Point to Point
+## Project B - Simplex Point to Point
 
 ### Rangkaian & Instalasi
 
@@ -225,16 +225,16 @@ Dilanjutkan dengan print data pada serial monitor.
 
 ```c
 Serial.print("Bytes received: ");
-    Serial.println(len);
-    Serial.print("Char: ");
-    Serial.println(myData.a);
-    Serial.print("Int: ");
-    Serial.println(myData.b);
-    Serial.print("Float: ");
-    Serial.println(myData.c);
-    Serial.print("Bool: ");
-    Serial.println(myData.d);
-    Serial.println();
+Serial.println(len);
+Serial.print("Char: ");
+Serial.println(myData.a);
+Serial.print("Int: ");
+Serial.println(myData.b);
+Serial.print("Float: ");
+Serial.println(myData.c);
+Serial.print("Bool: ");
+Serial.println(myData.d);
+Serial.println();
 ```
 
 Pada fungsi `setup()` insialisasi baud rate dan mode wifi menjadi station serta cek apakah ESP-NOW aktif.
@@ -263,3 +263,68 @@ esp_now_register_recv_cb(OnDataRecv);
 2. Receiver
 
 ![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1048964955749232710/B._Simplex_PTP_Receiver.png)
+
+### Tugas B no 11
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1048975577819910164/image.png)
+
+Percobaan dilakukan di ruangan tertutup dengan beberapa perabotan (meja dan kursi) serta terdapat beberapa orang dan ESP32 lain pada radius 10m / pada ruangan yang sama. Jarak antar ESP adalah 1 meter, 2 meter, 3 meter, 4 meter, dan 5 meter pada ketinggian masing-masing yaitu ground level, 30cm, dan 1m diatas tanah secara LOS (Line of Sight) dan halangan berupa tangan dan buku.
+
+Hasil yang didapatkan dari percobaan adalah 100% diterima dan 0% loss. Hal ini dikarenakan salah satu dari ESP yaitu ESP pengirim adalah seri ESP32U V4 yang memiliki antena eksternal dengan gain +3dB. Sehingga pada jarak 5 meter baik secara LOS maupun diberikan halangan, daya pancar antena sudah lebih dari cukup untuk mengcover keseluruhan area, sehingga penerima dengan mudah menerima sinyal tanpa kerusakan atau rugi-rugi berarti.
+
+## Project C - Simplex Point to Multipoint
+
+### Rangkaian & Instalasi
+
+1. Siapkan 3 atau lebih ESP32 yang sudah diketahui Mac Address wifinya.
+
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051349272299323452/C._Simplex_PTM.png" width="480px">
+
+2. Download dan jalankan kode dari source code sesuai project
+
+### Penjelasan
+
+Percobaan menggunakan 4 board ESP, satu sebagai **master** dan 3 sebagai **slave**. **Board master** akan melakukan broadcast yang pada prinsipnya (code) adalah mengirim data satu per satu ke ESP **slaves**. MAC dari **slaves** harus diidentifikasi pada **master** sebagai **address** tujuan dan membuat masing-masing peer sehingga **master** dapat mengirimkan data. Menggunakan fungsi data dan callback event yang sama, maka hasil pada serial monitor berupa data yang sama pada semua **slaves**.
+
+### Keluaran
+
+1. **Master**
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051351274479681596/C._Simplex_PTM_Sender.png)
+
+2. **Slave**
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051351311939026994/C._Simplex_PTM_Receiver.png)
+
+### Tugas C(a) no 9
+
+Percobaan menggunakan 3 board ESP, satu sebagai **master** dan 2 sebagai **slave**. Prinsip kerja yang dipakai adalah sama, akan tetapi board **slave** pada percobaan ini diputus salah satu. Sehingga hasil keluaranya menjadi sebagai berikut pada **board master**:
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051352238523699330/C._Simplex_PTM_Tugas_1.png)
+
+### Tugas C(a) no 10-11
+
+Percobaan hanya dapat menggunakan hingga 5 **board** saja karena keterbatasan ESP yang ada. Pada pengiriman 4 **slaves** tidak ada kendala sama sekali. Sedangkan menurut https://randomnerdtutorials.com/ ESP-NOW dapat berkomunikasi dengan peer terenkripsi hingga 10 ESP.
+Nb. Untuk menambah jumlah ESP dalam jaringan, maka selain menambah variabel mac juga perlu menambah peer untuk masing-masing **slaves**. **Board slave** menggunakan kode yang sama seperti sebelumnya.
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051352762329354280/C._Simplex_PTM_Tugas_2.png)
+
+### Tugas C(b)
+
+Percobaan menggunakan 4 board ESP, satu sebagai **master** dan 3 sebagai **slave**. Masing-masing ESP dibuatkan struktur data dan pada fungsi looping dilakukan routing pada masing-masing struktur data yang dibuat. Sehingga data yang diterima antar **slave** tidaklah sama. Sedangkan untuk **board slave** menggunakan kode yang sama seperti sebelumnya.
+
+1. **Master**
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051354348317327390/C._Simplex_PTM_Tugas_3b.png)
+
+2. **Slave 1**
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051355248234610778/C._Simplex_PTM_Tugas_3b_Slave_1.png)
+
+3. **Slave 2**
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051355248524021760/C._Simplex_PTM_Tugas_3b_Slave_2.jpeg)
+
+4. **Slave 3**
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051355248712757248/C._Simplex_PTM_Tugas_3b_Slave_3.png)
