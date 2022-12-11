@@ -29,6 +29,7 @@ Pada jobsheet 1.1 terdapat 3 project yaitu simulasi GPIO, PWM, dan ADC menggunak
 3. Jika terdapat error saat uploading, tekan dan tahan tombol _Boot_ pada ESP32 saat upload, hingga _Connecting_ selesai
 
 Nb. Proses instalasi dapat dilewati jika Arduino IDE sudah terintegrasi dengan ESP32.
+Atau download `libraries` dan upload pada direktori projek.
 
 ### Instalasi DHT & Adafruit Libraries
 
@@ -38,13 +39,14 @@ Nb. Proses instalasi dapat dilewati jika Arduino IDE sudah terintegrasi dengan E
 4. Instal juga library **Adafruit unified sensor** by Adafruit
 
 Nb. Proses instalasi dapat dilewati jika libraries telah diinstal.
+Atau download `libraries` dan upload pada direktori projek.
 
 ## Project A - Mac Address
 
 ### Rangkaian & Instalasi
 
 1. Siapkan ESP32 dan hubungkan ke Arduino IDE
-2. Download dan jalankan kode dari source code sesuai project
+2. Download dan jalankan kode dari source code sesuai project.
 
 ### Penjelasan
 
@@ -75,7 +77,7 @@ Mac akan keluar di serial monitor. Pastikan baud rate sama dengan kode. Jika tid
 
 <img src="https://cdn.discordapp.com/attachments/1043462519336996894/1048951902097920090/B._Simplex_PTP.webp" width="480px">
 
-2. Download dan jalankan kode dari source code sesuai project
+2. Download dan jalankan kode dari source code sesuai project.
 
 ### Penjelasan
 
@@ -264,7 +266,7 @@ esp_now_register_recv_cb(OnDataRecv);
 
 ![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1048964955749232710/B._Simplex_PTP_Receiver.png)
 
-### Tugas B no 11
+### Tugas B no. 8-11
 
 ![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1048975577819910164/image.png)
 
@@ -280,7 +282,7 @@ Hasil yang didapatkan dari percobaan adalah 100% diterima dan 0% loss. Hal ini d
 
 <img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051349272299323452/C._Simplex_PTM.png" width="480px">
 
-2. Download dan jalankan kode dari source code sesuai project
+2. Download dan jalankan kode dari source code sesuai project.
 
 ### Penjelasan
 
@@ -296,13 +298,13 @@ Percobaan menggunakan 4 board ESP, satu sebagai **master** dan 3 sebagai **slave
 
 ![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051351311939026994/C._Simplex_PTM_Receiver.png)
 
-### Tugas C(a) no 9
+### Tugas C(a) no. 9
 
 Percobaan menggunakan 3 board ESP, satu sebagai **master** dan 2 sebagai **slave**. Prinsip kerja yang dipakai adalah sama, akan tetapi board **slave** pada percobaan ini diputus salah satu. Sehingga hasil keluaranya menjadi sebagai berikut pada **board master**:
 
 ![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051352238523699330/C._Simplex_PTM_Tugas_1.png)
 
-### Tugas C(a) no 10-11
+### Tugas C(a) no. 10-11
 
 Percobaan hanya dapat menggunakan hingga 5 **board** saja karena keterbatasan ESP yang ada. Pada pengiriman 4 **slaves** tidak ada kendala sama sekali. Sedangkan menurut https://randomnerdtutorials.com/ ESP-NOW dapat berkomunikasi dengan peer terenkripsi hingga 10 ESP.
 Nb. Untuk menambah jumlah ESP dalam jaringan, maka selain menambah variabel mac juga perlu menambah peer untuk masing-masing **slaves**. **Board slave** menggunakan kode yang sama seperti sebelumnya.
@@ -328,3 +330,57 @@ Percobaan menggunakan 4 board ESP, satu sebagai **master** dan 3 sebagai **slave
 4. **Slave 3**
 
 ![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051355248712757248/C._Simplex_PTM_Tugas_3b_Slave_3.png)
+
+## Project D - Simplex Multipoint to Point
+
+### Rangkaian & Instalasi
+
+1. Siapkan 3 atau lebih ESP32 yang sudah diketahui Mac Address wifinya.
+
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051349272299323452/C._Simplex_PTM.png" width="480px">
+
+2. Download dan jalankan kode dari source code sesuai project.
+
+### Penjelasan
+
+Percobaan menggunakan 3 board ESP, 2 sebagai **slave** dan 1 sebagai **master**. Prinsip kerja master sama seperti pada percobaan PTP maupun PTM. Perbedaanya ada pada kode dari ESP penerima yaitu struktur dibuat dalam bentuk array yang diisi masing-masing variabel dari struktur data. Kemudian untuk mempermudah ditambahkan event callback yang mengidentifikasi **mac address** pengirim yang akan ditampilkan bersama dengan data yang diterima.
+
+### Keluaran
+
+1. **Master**
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051375306625273876/D._Simplex_MTP_Master.png)
+
+2. **Slave**
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051375306889502822/D._Simplex_MTP_Slave.png)
+
+## Project E - Duplex
+
+### Rangkaian & Instalasi
+
+1. Siapkan 2 ESP32 yang sudah diketahui Mac Address wifinya.
+
+<img src="https://cdn.discordapp.com/attachments/1043462519336996894/1051349272299323452/C._Simplex_PTM.png" width="480px">
+
+2. Download dan jalankan kode dari source code sesuai project.
+3. Pastikan library DHT dan adafruit sudah terinstal. Pastikan `DHTTYPE` sesuai dengan tipe sensor yang digunakan, contoh DHT11, DHT21, DHT22.
+
+### Penjelasan
+
+Percobaan menggunakan 1 board ESP untuk membaca sensor DHT (pada percobaan digunakan DHT11).
+
+### Keluaran
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051380317124042772/E._DHT11.png)
+
+### Tugas E no. 6-9
+
+Percobaan menggunakan 2 board ESP yang saling berkomunikasi. Hasil sensor ESP A dikirim ke ESP B dan juga sebaliknya dalam interval waktu tertentu. Sehingga program menggabungkan fungsi pengiriman dan penerimaan data serta pembacaan sensor sekaligus.
+
+![App Screenshot](https://cdn.discordapp.com/attachments/1043462519336996894/1051380507750957096/E._Duplex_Tugas_1.png)
+
+### Tugas E no. 10
+
+Percobaan memerlukan minimal 4 ESP dan DHT atau lebih. Akan tetapi, dikarenakan keterbatasan alat, maka percobaan ini tidak dilakukan.
+Prinsip kerjanya sama sebagaimana tugas sebelumnya dengan menambahkan struktur dan peer data baru untuk masing-masing jumlah ESP terhubung.
