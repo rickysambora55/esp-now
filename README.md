@@ -391,3 +391,12 @@ Percobaan menggunakan 2 board ESP yang saling berkomunikasi. Hasil sensor ESP A 
 
 Percobaan memerlukan minimal 4 ESP dan DHT atau lebih. Akan tetapi, dikarenakan keterbatasan alat, maka percobaan ini tidak dilakukan.
 Prinsip kerjanya sama sebagaimana tugas sebelumnya dengan menambahkan struktur dan peer data baru untuk masing-masing jumlah ESP terhubung.
+
+## Kesimpulan
+
+-   ESP dapat berkomunikasi satu sama lain dengan protokol ESP-NOW dengan mode point to point (PTP) dan point to multipoint (PTM) atau sebaliknya. Serta untuk komunikasi simpleks (searah) maupun dupleks (dua arah).
+-   Untuk mengirimkan data, format struktur antara pengirim dan penerima haruslah sama, jika berbeda maka tidak akan terkirim.
+-   Komunikasi satu arah untuk PTP, ESP pengirim (master) harus mengetahui MAC address ESP penerima (slave). Sedangkan ESP penerima tidak perlu.
+-   Komunikasi PTM, pengirim harus mengetahui seluruh MAC dari ESP yang akan dikirimkan datanya serta mengatur peer untuk dapat mengirim ke banyak tujuan. Sedangkan penerima hanya perlu menyamakan format struktur data yang akan diterima saja.
+-   Komunikasi MTP, beberapa pengirim harus mengetahui MAC dari ESP penerima, dan ESP penerima harus dapat memilah data dari berbagai sumber sekaligus dengan mengidentifikasi sumber paket berdasarkan MAC address.
+-   Untuk komunikasi dua arah, kedua ESP dibekali dengan kode untuk mengirim dan menerima (hybrid) dan mengetahui MAC address satu sama lain.
